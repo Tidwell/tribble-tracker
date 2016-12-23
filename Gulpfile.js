@@ -29,10 +29,6 @@ gulp.task('copyimages', () => {
 	return gulp.src('public/images/**/*')
 		.pipe(gulp.dest('dist/public/images'));
 });
-gulp.task('copymisc', () => {
-	return gulp.src('public/*.manifest')
-		.pipe(gulp.dest('dist/public/'));
-});
 gulp.task('copyviews', () => {
 	return gulp.src(['public/*.html'])
 		.pipe(gulp.dest('dist/public'));
@@ -48,7 +44,6 @@ gulp.task('build', function(callback) {
 		'babeljs',
 		'copystyles',
 		'copyimages',
-		'copymisc',
 		'copysrc',
 		'copyviews'],
 		callback);
