@@ -1,0 +1,73 @@
+html, body, #app {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	background-image: url('images/bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.tribble-user {
+	width: 20%;
+	height: 100%;
+	text-align: center;
+	float: left;
+}
+.user0 {
+	background-color: rgba(211, 77, 0, .8);
+}
+.user1 {
+	background-color: rgba(120, 198, 0, .8);
+}
+.user2 {
+	background-color: rgba(55, 147, 200, .8);
+}
+.user3 {
+	background-color: rgba(218, 164, 73, .8);
+}
+.user4 {
+	background-color: rgba(211, 147, 200, .8);
+}
+.user5 {
+	background-color: rgba(211, 77, 0, .8);
+}
+
+.score {
+	height: 75%;
+	overflow-y: scroll;
+}
+.score ul li {
+	list-style-type: none;
+	font-size: 2em;
+}
+.score ul li:first-child {
+	font-size: 3.5em;
+}
+.score ul li:not(:first-child) {
+	text-decoration: line-through;
+}
+.btns {
+	position: absolute;
+	bottom: 0;
+	width: 20%;
+}
+button.btn-floating {
+	margin: .25em;
+}
+.add-player {
+	position: fixed;
+	top: 1em;
+	right: 1em;
+}
+.add-round {
+	position: fixed;
+	top: 5em;
+	right: 1em;
+}
+.reset {
+	position: fixed;
+	top: 10em;
+	right: 1em;
+}
+h2 {
+	text-decoration: underline;
+}
