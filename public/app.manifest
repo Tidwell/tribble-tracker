@@ -1,6 +1,19 @@
 CACHE MANIFEST
  
+http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css
+http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+http://code.jquery.com/jquery-2.1.1.min.js
+http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js
+https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js
+
 images/bg.jpg
 styles.css
 app.js
 index.html
+
+http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0
+http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/fonts/roboto/Roboto-Regular.woff2
+http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0
+http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/fonts/roboto/Roboto-Regular.woff
+http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0
+http://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/fonts/roboto/Roboto-Regular.ttf
