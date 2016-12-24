@@ -19,6 +19,7 @@
 		  		<button class="btn-floating btn-large waves-effect waves-light" v-on:click="add(10000)">10000</button>
 		  		<button class="btn-floating btn-large waves-effect waves-light" v-on:click="add(100000)">100000</button>
 		  		<button class="btn-floating btn-large waves-effect waves-light" v-on:click="addMany">+ X</button>
+		  		<button class="btn-floating btn-large waves-effect waves-light" v-on:click="subtractMany">- X</button>
 		  		<button class="btn-floating btn-large waves-effect waves-light" v-on:click="set">Set</button>
 		  	</div>
 	  	</div>
@@ -33,6 +34,20 @@
 	  	numUsers++;
 	  	this.userId = numUsers;
 	  },
+	  mounted: function() {
+	  	var self = this;
+	  	var myElement = document.getElementsByClassName('user'+this.userId)[0];
+
+		var mc = new Hammer(myElement);
+
+		// listen to events...
+		mc.on("swipe", function(ev) {
+			if (ev.target.nodeName === 'LI') {
+			    var arrayIndex = $(ev.target).index();
+			    self.remove(self.scoreList.length - 1 - arrayIndex);
+			}
+		});
+	},
 	  methods: {
 	  	getUserClass: function() {
 	  		var obj = {};
@@ -43,9 +58,17 @@
 	  		this.scoreTotal = this.scoreTotal + num;
 	  		this.scoreList.push(this.scoreTotal);
 	  	},
+	  	subtract: function(num) {
+	  		this.scoreTotal = this.scoreTotal - num;
+	  		this.scoreList.push(this.scoreTotal);
+	  	},
 	  	addMany: function() {
 	  		var num = prompt('How many to add?');
 	  		if (!isNaN(num) && num) { this.add(Number(num)); }
+	  	},
+	  	subtractMany: function() {
+	  		var num = prompt('How many to subtract?');
+	  		if (!isNaN(num) && num) { this.subtract(Number(num)); }
 	  	},
 	  	set: function() {
 	  		var num = prompt('Set score to...');
@@ -53,11 +76,19 @@
 	  			this.scoreTotal = Number(num);
 	  			this.scoreList.push(Number(num));
 	  		}
+	  	},
+	  	remove: function(arrayIndex) {
+	  		this.scoreList.splice(arrayIndex,1);
+	  		if (this.scoreList.length) {
+		  		this.scoreTotal = Number(this.scoreList[this.scoreList.length-1]);
+		  	} else {
+		  		this.scoreTotal = 0;
+		  	}
 	  	}
 	  },
 	  computed: {
 	  	scoreReverse: function() {
-	  		return this.scoreList.reverse();
+	  		return this.scoreList.slice().reverse();
 	  	}
 	  }
 	});
